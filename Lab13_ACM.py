@@ -22,24 +22,19 @@ def adjective(list):
     return list
 
 def madlib():
+    file=open(pickAFile(),'r') 
     wordlist = []
-    stringlist = []
-    #string1 = "This is a test for a noun: "
-    #string2 = "This is a test for a verb: "
-    #string3 = "This is a test for a adverb: "
-    #string4 = "This is a test for a adjective: "
-    stringlist.append("This is a test for a noun: ")
-    stringlist.append("This is a test for a verb: ")
-    stringlist.append("This is a test for a adverb: ")
-    stringlist.append("This is a test for a adjective: ")
-    noun(wordlist)
-    verb(wordlist)
-    adverb(wordlist)
-    adjective(wordlist)
+    noun(wordlist)                  #index 0
+    verb(wordlist)                  #index 1
+    adverb(wordlist)                #index 2
+    adjective(wordlist)             #index 3
+    words={'noun':wordlist[0],'verb':wordlist[1],'adverb':wordlist[2],'adjective':wordlist[3]}
 
-    #print string1 + wordlist[0]
-    #print string2 + wordlist[1]
-    #print string3 + wordlist[2]
-    #print string4 + wordlist[3]
-    for i in range(0, len(wordlist)):
-        print stringlist[i] + wordlist[i]
+    for line in file:
+        for key in words:
+            line=line.replace(key,words[key])
+        print line
+            
+    file.close()
+        
+madlib()
