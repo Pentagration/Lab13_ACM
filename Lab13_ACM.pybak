@@ -25,3 +25,7 @@ def replace(sentence):
 # Right from StackOverflow. Doesn't assign variables for each word though so I think it would fufill the objective. 
 # Change the mod to 10 and we would be cooking with fire. 
 
+file=open("mad.txt", "r")
+string = file.read()
+print string
+
