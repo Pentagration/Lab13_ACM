@@ -1,27 +1,45 @@
-# Lab 13 
-# Adam Colin Marcus 
+# Lab 13
+# Adam Colin Marcus
 
-def replace(sentence):
+def noun(list):
+    word = raw_input("Enter a noun: ")
+    list.append(word)
+    return list
 
-    l = list(sentence)
+def verb(list):
+    word = raw_input("Enter a verb: ")
+    list.append(word)
+    return list
 
-    list_even = list()
+def adverb(list):
+    word = raw_input("Enter an adverb: ")
+    list.append(word)
+    return list
 
-    list_odd = list()
+def adjective(list):
+    word = raw_input("Enter an adjective: ")
+    list.append(word)
+    return list
 
-    index = 0
+def madlib():
+    wordlist = []
+    stringlist = []
+    #string1 = "This is a test for a noun: "
+    #string2 = "This is a test for a verb: "
+    #string3 = "This is a test for a adverb: "
+    #string4 = "This is a test for a adjective: "
+    stringlist.append("This is a test for a noun: ")
+    stringlist.append("This is a test for a verb: ")
+    stringlist.append("This is a test for a adverb: ")
+    stringlist.append("This is a test for a adjective: ")
+    noun(wordlist)
+    verb(wordlist)
+    adverb(wordlist)
+    adjective(wordlist)
 
-    for word in l:
-        if index % 2 != 0:
-            list_even.append(word)
-        else:
-            list_odd.append(word)
-        index += 1
-
-    string_odd = "hello".join(list_odd)
-
-    print(string_odd)
-    
-# Right from StackOverflow. Doesn't assign variables for each word though so I think it would fufill the objective. 
-# Change the mod to 10 and we would be cooking with fire. 
-
+    #print string1 + wordlist[0]
+    #print string2 + wordlist[1]
+    #print string3 + wordlist[2]
+    #print string4 + wordlist[3]
+    for i in range(0, len(wordlist)):
+        print stringlist[i] + wordlist[i]
