@@ -2,7 +2,6 @@
 # Adam Colin Marcus 
 
 def replace(sentence):
-
     l = list(sentence)
 
     list_even = list()
@@ -24,8 +23,9 @@ def replace(sentence):
     
 # Right from StackOverflow. Doesn't assign variables for each word though so I think it would fufill the objective. 
 # Change the mod to 10 and we would be cooking with fire. 
-
-file=open("mad.txt", "r")
-string = file.read()
-print string
+def main():
+  file=open("mad.txt", "r")
+  string = file.read()
+  print "hello"
+  print string
 
