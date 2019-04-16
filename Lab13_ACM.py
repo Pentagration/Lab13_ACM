@@ -24,11 +24,7 @@ def adjective(list):
 def madlib():
     file=open(pickAFile(),'r') 
     wordlist = []
-    noun(wordlist)                  #index 0
-    verb(wordlist)                  #index 1
-    adverb(wordlist)                #index 2
-    adjective(wordlist)             #index 3
-    words={'noun':wordlist[0],'verb':wordlist[1],'adverb':wordlist[2],'adjective':wordlist[3]}
+    words={'noun':noun(wordlist),'verb':verb(wordlist),'adverb':adverb(wordlist),'adjective':adjective(wordlist)}
 
     for line in file:
         for key in words:
