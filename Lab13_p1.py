@@ -16,8 +16,8 @@ def madlib():
     end = 0
     for line in file:
         if '{' in line:     # checks line for replaceable word
-            start = line.find('{', end) + 1 # pass the '{'
-            end = line.find('}', start)
+            start = line.find('{') + 1 # pass the '{'
+            end = line.find('}')
             key = line[start : end]
             line=line.replace(key,userInput(key)).replace('\n', '')
         story.append(line)  # appends line to list for printing
