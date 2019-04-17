@@ -1,7 +1,7 @@
 
-#STUDENTS: Adam Houser, Colin Reed, Marcus Gonzalez, Sergio Quiroz, Jason Pettit
+#STUDENTS: Adam Houser, Colin Reed, Marcus Gonzalez
 #Team 5 - Pentagration
-#CST205-40_SP19 Lab 12
+#CST205-40_SP19 Lab 13
 
 ##################################################
 #win/lose conditions
@@ -380,7 +380,7 @@ def setRoom(name,items=None,stash=None):
 def checkGame(turnCount,stash,name):
 # checks win/lose scenario based on turns and items picked up
     if "goldCoin" in stash and "rumcup" in stash and "cutlass" in stash and turnCount > 0:
-      showInformation("You win "+name+"!") 
+      showInformation("You win "+name+"!")
       return 2                                 #2 is win scenario
     if turnCount>0:
       return 1                                 #1 is continue scenaio

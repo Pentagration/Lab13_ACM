@@ -1,6 +1,6 @@
 # Colin Reed, Marcus Gonzalez, Adam Houser
 # CST 205 Spring 2019
-# Lab 14
+# Lab 13
 
 def userInput(key):
     #presents user with a word type to replace and return user's input
@@ -21,6 +21,8 @@ def madlib():
             key = line[start : end]
             line=line.replace(key,userInput(key)).replace('\n', '')
         story.append(line)  # appends line to list for printing
+
+    file.close()
 
     for i in story:
         print i
