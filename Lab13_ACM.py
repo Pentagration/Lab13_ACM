@@ -1,39 +1,21 @@
-# Lab 13
-# Adam Colin Marcus
 
-def noun(list):
-    word = raw_input("Enter a noun: ")
-    list.append(word)
-    return list
+def userInput(key):
+    word = raw_input("Enter a " + key + " : ")
+    return word
 
-def verb(list):
-    word = raw_input("Enter a verb: ")
-    list.append(word)
-    return list
-
-def adverb(list):
-    word = raw_input("Enter an adverb: ")
-    list.append(word)
-    return list
-
-def adjective(list):
-    word = raw_input("Enter an adjective: ")
-    list.append(word)
-    return list
 
 def madlib():
-    file=open(pickAFile(),'r') 
-    wordlist=[]
-    noun(wordlist)                  #index 0
-    verb(wordlist)                  #index 1
-    adverb(wordlist)                #index 2
-    adjective(wordlist)             #index 3
-    words={'noun':wordlist[0],'verb':wordlist[1],'adverb':wordlist[2],'adjective':wordlist[3]}
+    file = open(pickAFile(),'r')
+    story = []
+
+    end = 0
     for line in file:
-        for key in words:
-            line=line.replace(key,words[key])
-        print line
-            
-    file.close()
-        
-madlib()
+        if '{' in line:
+            start = line.find('{', end) + 1 # pass the '{'
+            end = line.find('}', start)
+            key = line[start : end]
+            line=line.replace(key,userInput(key)).replace('\n', '')
+        story.append(line)
+
+    for i in story:
+        print i
